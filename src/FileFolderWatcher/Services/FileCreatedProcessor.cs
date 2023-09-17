@@ -26,7 +26,7 @@ namespace FileFolderWatcher.Services
         /// <returns>text</returns>
         public async Task<string> Handle(string path)
         {
-           var text = await _fileHandlerStrategy.Handle(path, FileOperationEnum.Created);
+           var text = await _fileHandlerStrategy.Handle(path);
            return text;
         }
     }

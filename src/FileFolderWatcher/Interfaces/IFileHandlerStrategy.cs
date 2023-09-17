@@ -11,8 +11,7 @@ namespace FileFolderWatcher.Interfaces
         /// process file
         /// </summary>
         /// <param name="path">full path to file</param>
-        /// <param name="operation">file operation</param>
         /// <returns>text result</returns>
-        public Task<string> Handle(string path, FileOperationEnum operation);
+        public Task<string> Handle(string path);
     }
 }

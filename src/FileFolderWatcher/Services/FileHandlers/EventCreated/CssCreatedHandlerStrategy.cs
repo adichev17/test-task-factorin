@@ -5,7 +5,7 @@ namespace FileFolderWatcher.Services.FileHandlers.EventCreated
 {
     public class CssCreatedHandlerStrategy : IFileHandlerStrategy
     {
-        public async Task<string> Handle(string path, FileOperationEnum operation)
+        public async Task<string> Handle(string path)
         {
             int leftBracketCount = 0;
             int rightBracketCount = 0;
@@ -27,7 +27,7 @@ namespace FileFolderWatcher.Services.FileHandlers.EventCreated
                 }
             });
 
-            return $"{fileName}-{operation}-{leftBracketCount == rightBracketCount}";
+            return $"{fileName}-{FileOperationEnum.Created}-{leftBracketCount == rightBracketCount}";
         }
     }
 }

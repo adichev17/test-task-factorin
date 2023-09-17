@@ -6,12 +6,12 @@ namespace FileFolderWatcher.Services.FileHandlers.EventCreated
 {
     public partial class NotSpecificCreatedHandlerStrategy : IFileHandlerStrategy
     {
-        public async Task<string> Handle(string path, FileOperationEnum operation)
+        public async Task<string> Handle(string path)
         {
             var fileName = Path.GetFileNameWithoutExtension(path);
             string text = await File.ReadAllTextAsync(path);
             var punctuationMarksCount = PunctuationMarks().Count(text);
-            return $"{fileName}-{operation}-{punctuationMarksCount}";
+            return $"{fileName}-{FileOperationEnum.Created}-{punctuationMarksCount}";
         }
 
         [GeneratedRegex("\\p{P}")]
