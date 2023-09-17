@@ -26,7 +26,7 @@ git clone https://github.com/adichev17/test-task-factorin.git
 ```
 cd src
 cd FileFolderWatcher
-dotnet run
+dotnet run -c Release
 ```
 
 
