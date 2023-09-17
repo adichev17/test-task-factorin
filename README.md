@@ -19,7 +19,7 @@ Worker, задача которого обрабатывать и отслежи
 ### Installing
 
 ```
-git clone https://github.com/adichev17/Test-Task-SendMailAndLogToDbMessag.git
+git clone https://github.com/adichev17/test-task-factorin.git
 ```
 * в файле appsettings.json в поле "FullPathFolder" указать полный путь к каталогу для отслеживания
 * в файле appsettings.json в поле "OutputFilePathResult" указать полный путь к файлу (.txt) в который будет записан результат работы. Если по указанному пути файл не найден, то он будет создан автоматически (ex.: C:\\Users\\adichev\\folder\\result.txt)
