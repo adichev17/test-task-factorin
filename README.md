@@ -28,8 +28,12 @@ git clone https://github.com/adichev17/test-task-factorin.git
 * в файле appsettings.json в поле "OutputFilePathResult" указать полный путь к файлу (.txt) в который будет записан результат работы. Если по указанному пути файл не найден, то он будет создан автоматически (ex.: C:\\\Users\\\adichev\\\folder\\\result.txt)
 ```
 cd src/FileFolderWatcher
+dotnet build --property WarningLevel=0
 dotnet run -c Release
 ```
+
+### Detalization
+Не изменять результирующий файл вручную через OS во время работы программы
 
 
 
