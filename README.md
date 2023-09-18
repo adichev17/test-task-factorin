@@ -31,5 +31,8 @@ cd src/FileFolderWatcher
 dotnet run -c Release
 ```
 
+### Detalization
+Не изменять файл через OS во время работы программы
+
 
 
