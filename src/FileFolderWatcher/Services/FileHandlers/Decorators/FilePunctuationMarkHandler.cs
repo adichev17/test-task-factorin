@@ -15,6 +15,7 @@ namespace FileFolderWatcher.Services.FileHandlers.Decorators
         public override async Task<string> Handle()
         {
             string text = await File.ReadAllTextAsync(base.FullPath);
+            //todo: or we can use Regex
             var punctuationMarksCount = RegexExtension.PunctuationMarks().Count(text);
             return $"{base.FileName}-{base.Operation}-{punctuationMarksCount}";
         }

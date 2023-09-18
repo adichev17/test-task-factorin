@@ -17,6 +17,7 @@ namespace FileFolderWatcher.Services.FileHandlers.Decorators
 
             string text = await File.ReadAllTextAsync(base.FullPath);
 
+            //todo: or we can use Regex
             text.AsParallel().ForAll(symbol =>
             {
                 switch (symbol)
