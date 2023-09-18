@@ -11,10 +11,10 @@ IConfiguration configuration = new ConfigurationBuilder()
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>
     {
+        services.AddOptions<AppConfig>().Bind(configuration.GetSection(AppConfig.Section));
         services.AddHostedService<Worker>();
         services.AddSingleton<IFileWatcher, FileWatcher>();
         services.AddSingleton<IMultiThreadFileWriter, MultiThreadFileWriter>();
-        services.AddOptions<AppConfig>().Bind(configuration.GetSection(AppConfig.Section));
     })
     .Build();
 

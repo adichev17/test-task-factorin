@@ -1,5 +1,4 @@
-﻿using FileFolderWatcher.Enums;
-using FileFolderWatcher.Interfaces;
+﻿using FileFolderWatcher.Interfaces;
 using FileFolderWatcher.Models.Configuration;
 using Microsoft.Extensions.Options;
 
@@ -34,12 +33,12 @@ namespace FileFolderWatcher.Services
         private async Task OnCreated(object sender, FileSystemEventArgs e)
         {
 #if DEBUG
-            _logger.LogInformation($"File Created {e.FullPath}. Executable thread: {Thread.CurrentThread.ManagedThreadId}");
+            _logger.LogInformation(
+                $"File Created {e.FullPath}. Executable thread: {Thread.CurrentThread.ManagedThreadId}");
 #endif
             _logger.LogInformation($"Start file processing {e.Name}");
-            var fileTypeEnum = GetFileTypeEnum(e.FullPath);
-            IFileOperationSpecification fileCreatedProcessor = new FileCreatedProcessor(fileTypeEnum);
-            var text = await fileCreatedProcessor.Handle(e.FullPath);
+            var fileCreatedProcessor = new FileCreatedStrategy(e.FullPath);
+            var text = await fileCreatedProcessor.Handle();
             _multiThreadFileWriter.WriteLine(text);
         }
 
@@ -55,14 +54,6 @@ namespace FileFolderWatcher.Services
 #if DEBUG
             _logger.LogInformation($"File Deleted. Executable thread: {Thread.CurrentThread.ManagedThreadId}");
 #endif
-        }
-
-        private FileTypeEnum GetFileTypeEnum(string path)
-        {
-            var fileInfo = new FileInfo(path);
-            return !Enum.TryParse(fileInfo.Extension.Replace(".", string.Empty), true, out FileTypeEnum fileTypeEnum)
-                ? FileTypeEnum.NotSpecific
-                : fileTypeEnum;
         }
 
         public void Dispose()
