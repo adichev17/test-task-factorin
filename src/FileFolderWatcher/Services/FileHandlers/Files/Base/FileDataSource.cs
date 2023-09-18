@@ -6,7 +6,6 @@ namespace FileFolderWatcher.Services.FileHandlers.Files.Base
     {
         public string FullPath { get; protected set; }
         public string FileName { get; protected set; }
-
         public FileTypeEnum FileType { get; protected set; }
 
         protected FileDataSource(string path)
