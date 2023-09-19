@@ -1,8 +1,5 @@
 ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
 ![MicrosoftSQLServer](https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)
-[![total views](https://raw.githubusercontent.com/adichev17/test-task-factorin/traffic/total_views.svg)](https://github.com/adichev17/test-task-factorin/tree/traffic#-total-traffic-data-badge)
-[![total clones](https://raw.githubusercontent.com/adichev17/test-task-factorin/traffic/total_clones.svg)](https://github.com/adichev17/test-task-factorin/tree/traffic#-total-traffic-data-badge)
-
 
 # Project Title
 
